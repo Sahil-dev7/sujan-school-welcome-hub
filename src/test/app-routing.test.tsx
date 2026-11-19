@@ -15,3 +15,16 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 });
+
+describe("Site navigation", () => {
+  it("matches a real page for every section and sub-page in the menu", async () => {
+    const { SECTIONS } = await import("@/content/sections");
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    for (const s of SECTIONS) {
+      expect(router.matchRoutes(`/${s.slug}`).at(-1)?.routeId).toBe("/$section/");
+      for (const p of s.pages) {
+        expect(router.matchRoutes(`/${s.slug}/${p.slug}`).at(-1)?.routeId).toBe("/$section/$page");
+      }
+    }
+  });
+});
