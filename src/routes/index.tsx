@@ -12,7 +12,7 @@ import { Icon } from "@/components/site/Icon";
 import { KeyFacts } from "@/components/site/KeyFacts";
 import { NewsCard } from "@/components/site/NewsList";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
-import { PhotoNote } from "@/components/site/Placeholder";
+import { PhotoNote, PhotoPending } from "@/components/site/Placeholder";
 import { PrincipalMessage } from "@/components/site/PrincipalMessage";
 import { Programmes } from "@/components/site/Programmes";
 import { Reveal } from "@/components/site/Reveal";
@@ -67,19 +67,20 @@ const WHY: { title: string; text: string; icon: IconName }[] = [
   { title: "Safe Learning Environment", text: "A caring, disciplined atmosphere where children feel secure.", icon: "shield" },
 ];
 
-const FACILITIES: { title: string; photo: PhotoKey; page: string }[] = [
-  { title: "Classrooms", photo: "classroom", page: "infrastructure" },
-  { title: "Science Laboratories", photo: "science", page: "science-laboratories" },
-  { title: "Library", photo: "library", page: "library" },
-  { title: "Computer Laboratory", photo: "computer", page: "computer-laboratory" },
-  { title: "Playground & Sports", photo: "cricket", page: "sports-facilities" },
+// Tiles without a `photo` show a "photo to be added" panel until the school supplies one.
+const FACILITIES: { title: string; photo?: PhotoKey; page: string }[] = [
+  { title: "School Building", photo: "building", page: "infrastructure" },
+  { title: "Science Laboratories", page: "science-laboratories" },
+  { title: "Library", page: "library" },
+  { title: "Computer Laboratory", page: "computer-laboratory" },
+  { title: "Assembly Hall & Stage", photo: "hallStage", page: "infrastructure" },
 ];
 
-const BEYOND: { title: string; photo: PhotoKey; page: string; icon: IconName }[] = [
-  { title: "Sports & Games", photo: "sports", page: "sports-games", icon: "trophy" },
-  { title: "Dance & Culture", photo: "cultural", page: "cultural-activities", icon: "music" },
-  { title: "Art & Creativity", photo: "art", page: "art-creativity", icon: "palette" },
-  { title: "Assemblies & Events", photo: "assembly", page: "annual-functions", icon: "star" },
+const BEYOND: { title: string; photo?: PhotoKey; page: string; icon: IconName }[] = [
+  { title: "Sports & Games", photo: "drill", page: "sports-games", icon: "trophy" },
+  { title: "Dance & Culture", photo: "classical", page: "cultural-activities", icon: "music" },
+  { title: "Art & Creativity", page: "art-creativity", icon: "palette" },
+  { title: "Assemblies & Events", photo: "flag", page: "annual-functions", icon: "star" },
 ];
 
 function Home() {
@@ -120,9 +121,9 @@ function Home() {
         <div className="container-site grid items-center gap-14 py-20 md:py-28 lg:grid-cols-2">
           <Reveal className="relative">
             <div className="grid grid-cols-5 gap-4">
-              <img src={PHOTOS.campus.src} alt={PHOTOS.campus.alt} loading="lazy" className="col-span-3 aspect-[3/4] w-full rounded-2xl object-cover shadow-lift" />
+              <img src={PHOTOS.building.src} alt={PHOTOS.building.alt} loading="lazy" className="col-span-3 aspect-[3/4] w-full rounded-2xl object-cover shadow-lift" style={{ objectPosition: PHOTOS.building.position }} />
               <div className="col-span-2 flex flex-col gap-4 pt-12">
-                <img src={PHOTOS.students.src} alt={PHOTOS.students.alt} loading="lazy" className="aspect-square w-full rounded-2xl object-cover shadow-soft" />
+                <img src={PHOTOS.entrance.src} alt={PHOTOS.entrance.alt} loading="lazy" className="aspect-square w-full rounded-2xl object-cover shadow-soft" />
                 <div className="rounded-2xl bg-primary p-5 text-primary-foreground">
                   <p className="font-display text-5xl font-semibold text-gold">{new Date().getFullYear() - SCHOOL.established}+</p>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em]">Years of education in Kantaphod</p>
@@ -218,7 +219,11 @@ function Home() {
                   params={{ section: "campus", page: f.page }}
                   className="group relative block h-full overflow-hidden rounded-2xl bg-ink"
                 >
-                  <img src={PHOTOS[f.photo].src} alt={PHOTOS[f.photo].alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  {f.photo ? (
+                    <img src={PHOTOS[f.photo].src} alt={PHOTOS[f.photo].alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" style={{ objectPosition: PHOTOS[f.photo].position }} />
+                  ) : (
+                    <PhotoPending label={f.title} showLabel={false} className="rounded-2xl pb-14" />
+                  )}
                   <span className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" aria-hidden="true" />
                   <span className="absolute bottom-0 left-0 flex w-full items-end justify-between p-5 text-ink-foreground">
                     <span className="font-display text-xl font-semibold md:text-2xl">{f.title}</span>
@@ -246,7 +251,11 @@ function Home() {
               <Reveal key={b.title} delay={i * 90}>
                 <Link to="/$section/$page" params={{ section: "student-life", page: b.page }} className="group block">
                   <div className="relative overflow-hidden rounded-t-[999px] rounded-b-2xl">
-                    <img src={PHOTOS[b.photo].src} alt={PHOTOS[b.photo].alt} loading="lazy" className="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    {b.photo ? (
+                      <img src={PHOTOS[b.photo].src} alt={PHOTOS[b.photo].alt} loading="lazy" className="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: PHOTOS[b.photo].position }} />
+                    ) : (
+                      <PhotoPending label={b.title} className="aspect-[3/4] h-auto rounded-t-[999px] rounded-b-2xl pt-20" />
+                    )}
                   </div>
                   <div className="mt-5 flex items-center gap-3">
                     <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
@@ -346,7 +355,7 @@ function Home() {
 
       {/* Admission enquiry */}
       <section id="enquiry" className="relative overflow-hidden bg-ink text-ink-foreground">
-        <img src={PHOTOS.assembly.src} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-20" />
+        <img src={PHOTOS.prayerHall.src} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-hero-gradient" aria-hidden="true" />
         <div className="container-site relative grid gap-12 py-20 md:py-28 lg:grid-cols-[1fr_1.5fr] lg:items-center">
           <div>

@@ -1,4 +1,4 @@
-import { PencilLine } from "lucide-react";
+import { Camera, PencilLine } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /** Clearly marked box for information the school has not supplied yet. */
@@ -43,7 +43,26 @@ export function DraftTag({ className }: { className?: string }) {
 export function PhotoNote({ className }: { className?: string }) {
   return (
     <p className={cn("text-xs italic text-muted-foreground", className)}>
-      Representative photographs — to be replaced with the school's own pictures.
+      Photographs from the school's official Facebook page.
     </p>
+  );
+}
+
+/** Fills its parent where no real photograph of the school exists yet. */
+export function PhotoPending({ label, className, showLabel = true }: { label: string; className?: string; showLabel?: boolean }) {
+  return (
+    <div
+      className={cn(
+        "flex h-full w-full flex-col items-center justify-center gap-2 border-2 border-dashed border-placeholder-foreground/35 bg-placeholder p-6 text-center text-placeholder-foreground",
+        className,
+      )}
+      data-placeholder="true"
+      role="img"
+      aria-label={`${label}: photo to be added by the school`}
+    >
+      <Camera className="h-8 w-8" aria-hidden="true" />
+      {showLabel && <p className="text-sm font-semibold">{label}</p>}
+      <p className="text-[10px] font-bold uppercase tracking-[0.16em]">Photo to be added by the school</p>
+    </div>
   );
 }

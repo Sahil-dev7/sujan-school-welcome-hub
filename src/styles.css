@@ -45,6 +45,7 @@
   --color-ink-foreground: var(--ink-foreground);
   --color-sand: var(--sand);
   --color-placeholder: var(--placeholder);
+  --color-logo-plate: var(--logo-plate);
   --color-placeholder-foreground: var(--placeholder-foreground);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -90,6 +91,8 @@
   --sand: oklch(0.93 0.03 78);
   --placeholder: oklch(0.96 0.05 90);
   --placeholder-foreground: oklch(0.42 0.1 60);
+  /* The official logo has a white background; it always sits on a white plate. */
+  --logo-plate: oklch(1 0 0);
 
   --gradient-hero: linear-gradient(
     100deg,

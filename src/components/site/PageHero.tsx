@@ -19,7 +19,13 @@ export function PageHero({
 }) {
   return (
     <section className="relative isolate overflow-hidden bg-ink text-ink-foreground">
-      <img src={photo.src} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover animate-kenburns" fetchPriority="high" />
+      <img
+        src={photo.src}
+        alt=""
+        className="absolute inset-0 -z-20 h-full w-full object-cover animate-kenburns"
+        style={{ objectPosition: photo.position }}
+        fetchPriority="high"
+      />
       <div className="absolute inset-0 -z-10 bg-hero-gradient" aria-hidden="true" />
       <div className="container-site py-20 md:py-28">
         <nav aria-label="Breadcrumb" className="animate-rise">

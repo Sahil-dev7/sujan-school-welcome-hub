@@ -48,7 +48,9 @@ export type Block =
   | { type: "steps"; heading: string; items: { title: string; text: string }[]; note?: string }
   | {
       type: "imageText";
-      image: PhotoKey;
+      /** A real school photo. Leave out and set `missingPhoto` when none exists yet. */
+      image?: PhotoKey;
+      missingPhoto?: string;
       eyebrow?: string;
       heading: string;
       paragraphs: string[];

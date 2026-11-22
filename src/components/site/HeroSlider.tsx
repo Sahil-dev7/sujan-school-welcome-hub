@@ -15,19 +15,19 @@ const SLIDES: { photo: PhotoKey; eyebrow: string; title: string; text: string }[
     text: `An English-medium, co-educational school affiliated to the ${SCHOOL.board}.`,
   },
   {
-    photo: "classroom",
+    photo: "prizeStage",
     eyebrow: "Academics",
     title: "Where Learning Meets Excellence",
     text: "Lessons that encourage every child to ask, think and take part.",
   },
   {
-    photo: "sports",
+    photo: "drill",
     eyebrow: "Sports & Games",
     title: "Strong Bodies, Strong Spirits",
     text: "Games and activities that build fitness, teamwork and fair play.",
   },
   {
-    photo: "cultural",
+    photo: "annualDance",
     eyebrow: "Culture & Celebration",
     title: "Education for a Brighter Tomorrow",
     text: "A stage for every talent, rooted in the traditions of Malwa and India.",
@@ -78,6 +78,7 @@ export function HeroSlider() {
               src={photo.src}
               alt={photo.alt}
               className={cn("absolute inset-0 h-full w-full object-cover", active && "animate-kenburns")}
+              style={{ objectPosition: photo.position }}
               loading={i === 0 ? "eager" : "lazy"}
               fetchPriority={i === 0 ? "high" : "auto"}
             />

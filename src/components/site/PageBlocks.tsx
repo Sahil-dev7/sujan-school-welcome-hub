@@ -10,7 +10,7 @@ import { KeyFacts } from "./KeyFacts";
 import { MapEmbed } from "./MapEmbed";
 import { NewsList } from "./NewsList";
 import { PhotoGallery } from "./PhotoGallery";
-import { DraftTag, Placeholder, PhotoNote } from "./Placeholder";
+import { DraftTag, Placeholder, PhotoNote, PhotoPending } from "./Placeholder";
 import { PrincipalMessage } from "./PrincipalMessage";
 import { Programmes } from "./Programmes";
 import { Reveal } from "./Reveal";
@@ -92,13 +92,25 @@ function BlockView({ block }: { block: Block }) {
         </div>
       );
     case "imageText": {
-      const photo = PHOTOS[block.image];
+      const photo = block.image ? PHOTOS[block.image] : null;
       return (
         <div className={cn("grid items-center gap-10 lg:grid-cols-2 lg:gap-16")}>
           <Reveal className={cn("relative", block.reverse && "lg:order-2")}>
             <div className="absolute -bottom-4 -left-4 -z-10 h-2/3 w-2/3 rounded-2xl bg-sand" aria-hidden="true" />
-            <img src={photo.src} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lift" />
-            <PhotoNote className="mt-3" />
+            {photo ? (
+              <>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full rounded-2xl object-cover shadow-lift"
+                  style={{ objectPosition: photo.position }}
+                />
+                <PhotoNote className="mt-3" />
+              </>
+            ) : (
+              <PhotoPending label={block.missingPhoto ?? block.heading} className="aspect-[4/3] h-auto rounded-2xl" />
+            )}
           </Reveal>
           <Reveal delay={120}>
             {block.eyebrow && <p className="eyebrow">{block.eyebrow}</p>}

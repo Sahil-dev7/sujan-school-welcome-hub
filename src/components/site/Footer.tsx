@@ -101,7 +101,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {SCHOOL.name}, {SCHOOL.place}. All rights reserved.
           </p>
-          <p>Photographs shown are representative until the school's own images are added.</p>
+          <p>Photographs from the school's official Facebook page.</p>
         </div>
       </div>
     </footer>

@@ -20,11 +20,11 @@ export const SECTIONS: Section[] = [
         title: "School Introduction",
         summary: "Who we are, where we are, and what we stand for.",
         icon: "building",
-        image: "campus",
+        image: "entrance",
         blocks: [
           {
             type: "imageText",
-            image: "students",
+            image: "campus",
             eyebrow: "Welcome",
             heading: "An English-medium school for the families of Kantaphod",
             paragraphs: [
@@ -45,7 +45,7 @@ export const SECTIONS: Section[] = [
         title: "Our History",
         summary: `From our founding in ${SCHOOL.established} to the present day.`,
         icon: "calendar",
-        image: "assembly",
+        image: "flag",
         blocks: [
           {
             type: "prose",
@@ -72,7 +72,7 @@ export const SECTIONS: Section[] = [
         title: "Vision and Mission",
         summary: "The purpose that guides our teaching and our community.",
         icon: "compass",
-        image: "students",
+        image: "prizeStage",
         blocks: [
           {
             type: "quote",
@@ -98,7 +98,7 @@ export const SECTIONS: Section[] = [
         title: "Our Philosophy",
         summary: "How we believe children learn best.",
         icon: "lightbulb",
-        image: "classroom",
+        image: "prayerHall",
         blocks: [
           {
             type: "prose",
@@ -122,7 +122,7 @@ export const SECTIONS: Section[] = [
         title: "Principal's Message",
         summary: `A message from our Principal, ${SCHOOL.principal.name}.`,
         icon: "users",
-        image: "assembly",
+        image: "podium",
         blocks: [{ type: "principal" }],
       },
       {
@@ -130,7 +130,7 @@ export const SECTIONS: Section[] = [
         title: "Management",
         summary: "The people responsible for the school's direction.",
         icon: "users",
-        image: "campus",
+        image: "staffWide",
         blocks: [
           {
             type: "prose",
@@ -151,7 +151,7 @@ export const SECTIONS: Section[] = [
         title: "Our Values",
         summary: "The principles we hope every student carries with them.",
         icon: "heart",
-        image: "students",
+        image: "family",
         blocks: [
           {
             type: "features",
@@ -176,7 +176,7 @@ export const SECTIONS: Section[] = [
     title: "Academics",
     tagline: `${SCHOOL.board} · English medium`,
     intro: `Our academic programme follows the ${SCHOOL.board} curriculum, taught in English, from the early years through to the senior classes.`,
-    image: "classroom",
+    image: "prizeStage",
     overview: [{ type: "programmes" }],
     pages: [
       {
@@ -184,11 +184,11 @@ export const SECTIONS: Section[] = [
         title: "Academic Overview",
         summary: "Our curriculum, stages of schooling and approach to learning.",
         icon: "graduation",
-        image: "classroom",
+        image: "winners",
         blocks: [
           {
             type: "imageText",
-            image: "classroom",
+            image: "prayerHall",
             eyebrow: "Academics",
             heading: `Following the ${SCHOOL.board}`,
             paragraphs: [
@@ -204,7 +204,7 @@ export const SECTIONS: Section[] = [
         title: "Pre-Primary Education",
         summary: "Early years learning through play, stories and activity.",
         icon: "sparkles",
-        image: "prePrimary",
+        image: "building",
         blocks: [
           {
             type: "placeholder",
@@ -213,7 +213,7 @@ export const SECTIONS: Section[] = [
           },
           {
             type: "imageText",
-            image: "prePrimary",
+            missingPhoto: "Pre-primary classroom",
             eyebrow: "The early years",
             heading: "Learning through play",
             paragraphs: [
@@ -227,11 +227,11 @@ export const SECTIONS: Section[] = [
         title: "Primary Education",
         summary: "Classes I to V — building strong foundations.",
         icon: "book",
-        image: "art",
+        image: "juniorDance",
         blocks: [
           {
             type: "imageText",
-            image: "art",
+            image: "award",
             eyebrow: "Classes I – V",
             heading: "Strong foundations in reading, writing and number",
             paragraphs: [
@@ -250,11 +250,11 @@ export const SECTIONS: Section[] = [
         title: "Middle School",
         summary: "Classes VI to VIII — widening horizons.",
         icon: "compass",
-        image: "computer",
+        image: "prizeStage",
         blocks: [
           {
             type: "imageText",
-            image: "computer",
+            image: "certificate",
             eyebrow: "Classes VI – VIII",
             heading: "Widening horizons, building independence",
             paragraphs: [
@@ -273,11 +273,11 @@ export const SECTIONS: Section[] = [
         title: "Secondary Education",
         summary: "Classes IX to XII — board preparation and higher secondary.",
         icon: "graduation",
-        image: "science",
+        image: "seniors",
         blocks: [
           {
             type: "imageText",
-            image: "science",
+            image: "felicitation",
             eyebrow: "Classes IX – XII",
             heading: "Secondary and Higher Secondary",
             paragraphs: [
@@ -296,7 +296,7 @@ export const SECTIONS: Section[] = [
         title: "Curriculum",
         summary: `The ${SCHOOL.board} framework we follow.`,
         icon: "clipboard",
-        image: "library",
+        image: "hallStage",
         blocks: [
           {
             type: "prose",
@@ -319,7 +319,7 @@ export const SECTIONS: Section[] = [
         title: "Teaching Methodology",
         summary: "How lessons are planned and delivered.",
         icon: "lightbulb",
-        image: "classroom",
+        image: "staff",
         blocks: [
           {
             type: "features",
@@ -340,7 +340,7 @@ export const SECTIONS: Section[] = [
         title: "Academic Calendar",
         summary: "Key dates for the school year.",
         icon: "calendar",
-        image: "assembly",
+        image: "flagCeremony",
         blocks: [
           {
             type: "prose",
@@ -360,8 +360,8 @@ export const SECTIONS: Section[] = [
     slug: "campus",
     title: "Campus & Facilities",
     tagline: "Spaces for learning, play and growth",
-    intro: "An overview of the school's campus and learning spaces. Photographs shown are representative and will be replaced with images of our own campus.",
-    image: "library",
+    intro: "An overview of the school's campus and learning spaces. Photographs of individual facilities will be added as the school shares them.",
+    image: "building",
     pages: [
       {
         slug: "infrastructure",
@@ -372,7 +372,7 @@ export const SECTIONS: Section[] = [
         blocks: [
           {
             type: "imageText",
-            image: "campus",
+            image: "building",
             eyebrow: "Our campus",
             heading: "On Indore Road, Kantaphod",
             paragraphs: [`The school campus is located at Ward No. 3, Indore Road, Kantaphod, District Dewas.`],
@@ -389,7 +389,7 @@ export const SECTIONS: Section[] = [
         title: "Smart Classrooms",
         summary: "Technology-assisted teaching.",
         icon: "monitor",
-        image: "classroom",
+        image: "entrance",
         blocks: [
           {
             type: "placeholder",
@@ -403,11 +403,11 @@ export const SECTIONS: Section[] = [
         title: "Science Laboratories",
         summary: "Learning science by doing.",
         icon: "flask",
-        image: "science",
+        image: "building",
         blocks: [
           {
             type: "imageText",
-            image: "science",
+            missingPhoto: "Science laboratory",
             eyebrow: "Science",
             heading: "Learning science by doing",
             paragraphs: ["Practical work helps students understand scientific concepts and prepares senior students for board practical examinations."],
@@ -424,11 +424,11 @@ export const SECTIONS: Section[] = [
         title: "Computer Laboratory",
         summary: "Digital skills for a modern world.",
         icon: "monitor",
-        image: "computer",
+        image: "entrance",
         blocks: [
           {
             type: "imageText",
-            image: "computer",
+            missingPhoto: "Computer laboratory",
             eyebrow: "Digital skills",
             heading: "Computer education",
             paragraphs: ["Basic computer skills — typing, documents, internet safety and an introduction to programming — are increasingly essential for every student."],
@@ -445,11 +445,11 @@ export const SECTIONS: Section[] = [
         title: "Library",
         summary: "A home for reading and research.",
         icon: "library",
-        image: "library",
+        image: "hallStage",
         blocks: [
           {
             type: "imageText",
-            image: "library",
+            missingPhoto: "Library",
             eyebrow: "Reading",
             heading: "Building a love of reading",
             paragraphs: ["Reading widely builds vocabulary, imagination and understanding across every subject."],
@@ -466,11 +466,11 @@ export const SECTIONS: Section[] = [
         title: "Sports Facilities",
         summary: "Grounds and equipment for games and fitness.",
         icon: "trophy",
-        image: "cricket",
+        image: "drill",
         blocks: [
           {
             type: "imageText",
-            image: "cricket",
+            missingPhoto: "Playground and sports facilities",
             eyebrow: "Sports",
             heading: "Room to run and play",
             paragraphs: ["Physical activity is part of a healthy school day, building fitness, teamwork and sportsmanship."],
@@ -487,7 +487,7 @@ export const SECTIONS: Section[] = [
         title: "Transportation",
         summary: "Getting to and from school.",
         icon: "bus",
-        image: "campus",
+        image: "entrance",
         blocks: [
           {
             type: "placeholder",
@@ -502,7 +502,7 @@ export const SECTIONS: Section[] = [
         title: "Safety and Security",
         summary: "Keeping every child safe at school.",
         icon: "shield",
-        image: "assembly",
+        image: "campus",
         blocks: [
           {
             type: "prose",
@@ -523,18 +523,18 @@ export const SECTIONS: Section[] = [
     title: "Student Life",
     tagline: "Beyond the classroom",
     intro: "School is about more than lessons. Sports, arts, celebrations and competitions help children discover their talents and grow in confidence.",
-    image: "cultural",
+    image: "annualDance",
     pages: [
       {
         slug: "sports-games",
         title: "Sports and Games",
         summary: "Fitness, teamwork and the joy of play.",
         icon: "trophy",
-        image: "sports",
+        image: "campus",
         blocks: [
           {
             type: "imageText",
-            image: "sports",
+            image: "drill",
             eyebrow: "Sports",
             heading: "Fitness, teamwork and fair play",
             paragraphs: ["Games teach children to work as a team, to win graciously and to lose with dignity — lessons that last a lifetime."],
@@ -547,11 +547,11 @@ export const SECTIONS: Section[] = [
         title: "Cultural Activities",
         summary: "Celebrating music, dance and tradition.",
         icon: "music",
-        image: "cultural",
+        image: "folk",
         blocks: [
           {
             type: "imageText",
-            image: "cultural",
+            image: "classical",
             eyebrow: "Culture",
             heading: "Celebrating music, dance and tradition",
             paragraphs: ["Festivals and cultural programmes give students a stage to perform and a chance to celebrate the rich traditions of Malwa and India."],
@@ -564,11 +564,11 @@ export const SECTIONS: Section[] = [
         title: "Art and Creativity",
         summary: "Drawing, painting and craft.",
         icon: "palette",
-        image: "art",
+        image: "groupDance",
         blocks: [
           {
             type: "imageText",
-            image: "art",
+            missingPhoto: "Art and craft activities",
             eyebrow: "Art",
             heading: "Room for imagination",
             paragraphs: ["Drawing, painting and craft help children express themselves, observe carefully and build fine motor skills."],
@@ -581,7 +581,7 @@ export const SECTIONS: Section[] = [
         title: "Competitions",
         summary: "Quizzes, debates and contests.",
         icon: "medal",
-        image: "students",
+        image: "winners",
         blocks: [
           {
             type: "placeholder",
@@ -595,7 +595,7 @@ export const SECTIONS: Section[] = [
         title: "Educational Trips",
         summary: "Learning beyond the school gate.",
         icon: "map",
-        image: "students",
+        image: "entrance",
         blocks: [
           {
             type: "placeholder",
@@ -609,11 +609,11 @@ export const SECTIONS: Section[] = [
         title: "Annual Functions",
         summary: "Our yearly celebration of student talent.",
         icon: "star",
-        image: "cultural",
+        image: "annualDance",
         blocks: [
           {
             type: "imageText",
-            image: "cultural",
+            image: "drama",
             eyebrow: "Annual day",
             heading: "A celebration of the year",
             paragraphs: ["The annual function brings students, parents and teachers together to celebrate a year of learning and talent."],
@@ -626,7 +626,7 @@ export const SECTIONS: Section[] = [
         title: "Student Clubs",
         summary: "Interest groups and houses.",
         icon: "users",
-        image: "assembly",
+        image: "family",
         blocks: [
           {
             type: "placeholder",
@@ -642,18 +642,18 @@ export const SECTIONS: Section[] = [
     title: "Admissions",
     tagline: "Join the Sujan family",
     intro: "We welcome enquiries from families in Kantaphod and the surrounding area. Send an enquiry online or call the school office to learn more.",
-    image: "students",
+    image: "seniors",
     pages: [
       {
         slug: "overview",
         title: "Admission Overview",
         summary: "How to begin your child's journey with us.",
         icon: "graduation",
-        image: "students",
+        image: "entrance",
         blocks: [
           {
             type: "imageText",
-            image: "students",
+            image: "prizeStage",
             eyebrow: "Admissions",
             heading: "Welcome to the admissions office",
             paragraphs: [
@@ -757,14 +757,14 @@ export const SECTIONS: Section[] = [
     title: "Achievements",
     tagline: "Celebrating our students",
     intro: "A record of our students' accomplishments in academics, sports and beyond.",
-    image: "sports",
+    image: "winners",
     pages: [
       {
         slug: "academic",
         title: "Academic Achievements",
         summary: "Board results and academic honours.",
         icon: "graduation",
-        image: "science",
+        image: "prizeStage",
         blocks: [
           {
             type: "placeholder",
@@ -778,7 +778,7 @@ export const SECTIONS: Section[] = [
         title: "Sports Achievements",
         summary: "Medals and tournament results.",
         icon: "trophy",
-        image: "cricket",
+        image: "drill",
         blocks: [
           {
             type: "placeholder",
@@ -792,7 +792,7 @@ export const SECTIONS: Section[] = [
         title: "Student Awards",
         summary: "Recognition for talent and character.",
         icon: "medal",
-        image: "students",
+        image: "award",
         blocks: [
           {
             type: "placeholder",
@@ -807,15 +807,15 @@ export const SECTIONS: Section[] = [
     slug: "gallery",
     title: "Gallery",
     tagline: "Moments from school life",
-    intro: "Photographs and videos from life at school. Photographs currently shown are representative and will be replaced with the school's own pictures.",
-    image: "cultural",
+    intro: "Photographs and videos from life at school, from the school's official Facebook page.",
+    image: "annualDance",
     pages: [
       {
         slug: "photos",
         title: "Photo Gallery",
         summary: "Moments from classrooms, grounds and stage.",
         icon: "camera",
-        image: "cultural",
+        image: "classical",
         blocks: [{ type: "gallery" }],
       },
       {
@@ -823,7 +823,7 @@ export const SECTIONS: Section[] = [
         title: "Video Gallery",
         summary: "Watch our school videos.",
         icon: "video",
-        image: "assembly",
+        image: "hallStage",
         blocks: [{ type: "video" }],
       },
       {
@@ -831,14 +831,14 @@ export const SECTIONS: Section[] = [
         title: "School Events",
         summary: "Photographs from our celebrations and events.",
         icon: "star",
-        image: "sports",
+        image: "flag",
         blocks: [
           {
             type: "placeholder",
             label: "Event albums",
             hint: "Add photo albums from school events — Independence Day, Republic Day, annual function, sports day and festivals.",
           },
-          { type: "gallery", heading: "Representative photographs" },
+          { type: "gallery", heading: "Photographs from school events" },
         ],
       },
     ],
@@ -848,14 +848,14 @@ export const SECTIONS: Section[] = [
     title: "News & Events",
     tagline: "What's happening at school",
     intro: "Latest news, upcoming events and announcements from the school.",
-    image: "assembly",
+    image: "flagCeremony",
     pages: [
       {
         slug: "latest",
         title: "Latest News",
         summary: "Recent news from the school.",
         icon: "megaphone",
-        image: "assembly",
+        image: "flag",
         blocks: [{ type: "news", kind: "news" }],
       },
       {
@@ -863,7 +863,7 @@ export const SECTIONS: Section[] = [
         title: "Upcoming Events",
         summary: "Dates for your diary.",
         icon: "calendar",
-        image: "cultural",
+        image: "annualDance",
         blocks: [{ type: "news", kind: "events" }],
       },
       {
@@ -871,7 +871,7 @@ export const SECTIONS: Section[] = [
         title: "School Announcements",
         summary: "Notices for students and parents.",
         icon: "clipboard",
-        image: "classroom",
+        image: "podium",
         blocks: [{ type: "news", kind: "announcements" }],
       },
     ],
