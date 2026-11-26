@@ -8,3 +8,7 @@
 - [ ] Email address — waiting on school
 - [x] Principal name: Sukhveer Singh Bhatia
 - [ ] WhatsApp chat button using +91 9303262253
+- [ ] Remove school-supplied-content and missing-photo prompts without inventing facts
+- [ ] Add the AP Program & Exams page; school has confirmed an official offering
+- [ ] Use the newly uploaded principal portrait
+- [ ] Email enquiry submissions to sahilwadhwani.sujanpublic@outlook.com — blocked until a verified sender domain is configured
