@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { FULL_ADDRESS, SCHOOL, telHref } from "@/lib/site";
 import { FacebookIcon, WhatsappIcon, YoutubeIcon } from "./SocialIcons";
 import { Reveal } from "./Reveal";
@@ -37,22 +37,13 @@ export function ContactCards() {
       <Reveal delay={160} className="rounded-2xl border bg-card p-6 shadow-soft">
         <Mail className="h-6 w-6 text-accent" aria-hidden="true" />
         <h3 className="mt-4 text-xl font-semibold text-primary">Email</h3>
-        {SCHOOL.email ? (
           <a href={`mailto:${SCHOOL.email}`} className="mt-2 block break-all text-sm font-medium hover:text-accent">
             {SCHOOL.email}
           </a>
-        ) : (
-          <p className="mt-2 rounded-md border border-dashed border-placeholder-foreground/40 bg-placeholder px-3 py-2 text-xs text-placeholder-foreground">
-            Official email address to be added by the school.
-          </p>
-        )}
       </Reveal>
       <Reveal delay={240} className="rounded-2xl border bg-card p-6 shadow-soft">
-        <Clock className="h-6 w-6 text-accent" aria-hidden="true" />
-        <h3 className="mt-4 text-xl font-semibold text-primary">Office hours & social</h3>
-        <p className="mt-2 rounded-md border border-dashed border-placeholder-foreground/40 bg-placeholder px-3 py-2 text-xs text-placeholder-foreground">
-          Office hours to be added by the school.
-        </p>
+        <FacebookIcon className="h-6 w-6 text-accent" aria-hidden="true" />
+        <h3 className="mt-4 text-xl font-semibold text-primary">Social</h3>
         <div className="mt-4 flex gap-3 text-sm">
           <a href={SCHOOL.social.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-medium hover:text-accent">
             <FacebookIcon className="h-4 w-4" /> Facebook

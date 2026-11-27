@@ -1,4 +1,5 @@
-import { Check } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import type { Block } from "@/content/types";
 import { PHOTOS } from "@/lib/photos";
 import { cn } from "@/lib/utils";
@@ -10,7 +11,7 @@ import { KeyFacts } from "./KeyFacts";
 import { MapEmbed } from "./MapEmbed";
 import { NewsList } from "./NewsList";
 import { PhotoGallery } from "./PhotoGallery";
-import { DraftTag, Placeholder, PhotoNote, PhotoPending } from "./Placeholder";
+import { DraftTag, PhotoNote } from "./Placeholder";
 import { PrincipalMessage } from "./PrincipalMessage";
 import { Programmes } from "./Programmes";
 import { Reveal } from "./Reveal";
@@ -33,9 +34,18 @@ function BlockView({ block }: { block: Block }) {
         </Reveal>
       );
     case "placeholder":
+      return null;
+    case "links":
       return (
         <Reveal className="max-w-3xl">
-          <Placeholder label={block.label} hint={block.hint} />
+          <h2 className="text-2xl font-semibold text-primary md:text-3xl">{block.heading}</h2>
+          <div className="mt-6 flex flex-col items-start gap-3">
+            {block.items.map((item) => (
+              <Button key={item.url} asChild variant="link" className="h-auto whitespace-normal px-0 text-left">
+                <a href={item.url} target="_blank" rel="noopener noreferrer">{item.label}<ArrowUpRight className="shrink-0" /></a>
+              </Button>
+            ))}
+          </div>
         </Reveal>
       );
     case "features":
@@ -94,8 +104,8 @@ function BlockView({ block }: { block: Block }) {
     case "imageText": {
       const photo = block.image ? PHOTOS[block.image] : null;
       return (
-        <div className={cn("grid items-center gap-10 lg:grid-cols-2 lg:gap-16")}>
-          <Reveal className={cn("relative", block.reverse && "lg:order-2")}>
+        <div className={cn("grid items-center gap-10 lg:gap-16", photo ? "lg:grid-cols-2" : "max-w-3xl")}>
+          {photo && <Reveal className={cn("relative", block.reverse && "lg:order-2")}>
             <div className="absolute -bottom-4 -left-4 -z-10 h-2/3 w-2/3 rounded-2xl bg-sand" aria-hidden="true" />
             {photo ? (
               <>
@@ -108,10 +118,8 @@ function BlockView({ block }: { block: Block }) {
                 />
                 <PhotoNote className="mt-3" />
               </>
-            ) : (
-              <PhotoPending label={block.missingPhoto ?? block.heading} className="aspect-[4/3] h-auto rounded-2xl" />
-            )}
-          </Reveal>
+            ) : null}
+          </Reveal>}
           <Reveal delay={120}>
             {block.eyebrow && <p className="eyebrow">{block.eyebrow}</p>}
             <h2 className="mt-2 text-3xl font-semibold leading-tight text-primary md:text-4xl">{block.heading}</h2>
@@ -131,13 +139,12 @@ function BlockView({ block }: { block: Block }) {
         <div>
           <SectionHeading title={block.heading} />
           <ol className="relative mt-10 max-w-3xl border-l-2 border-gold/60 pl-8">
-            {block.items.map((t, i) => (
+            {block.items.filter((t) => !t.placeholder).map((t, i) => (
               <Reveal as="li" key={t.title + i} delay={i * 80} className="relative pb-10 last:pb-0">
                 <span className="absolute -left-[41px] top-1 h-4 w-4 rounded-full border-4 border-background bg-accent" aria-hidden="true" />
                 <p className={cn("font-display text-2xl font-semibold", t.placeholder ? "text-placeholder-foreground" : "text-accent")}>{t.year}</p>
                 <h3 className="mt-1 text-xl font-semibold text-primary">{t.title}</h3>
                 <p className="mt-1 text-muted-foreground">{t.text}</p>
-                {t.placeholder && <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-placeholder-foreground">To be added by the school</p>}
               </Reveal>
             ))}
           </ol>
@@ -167,7 +174,6 @@ function BlockView({ block }: { block: Block }) {
           </Reveal>
           <Reveal delay={120} className="space-y-5">
             <SectionHeading eyebrow="Video gallery" title="Watch the school on YouTube" intro="Click the video to play it here, or open it on YouTube." />
-            <Placeholder label="More videos" hint="Share links to more school videos — annual function, sports day or celebrations — and they will be added here." />
           </Reveal>
         </div>
       );

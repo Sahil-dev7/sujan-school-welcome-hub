@@ -1,7 +1,7 @@
 /**
  * Single source of truth for verified school information.
  * Anything set to `null` is not yet confirmed by the school and renders as a
- * clearly marked placeholder. Fill it in here and it updates across the site.
+   * omitted until confirmed. Fill it in here and it updates across the site.
  */
 export const SCHOOL = {
   name: "The Sujan Public H.S. School",
@@ -21,7 +21,7 @@ export const SCHOOL = {
     country: "India",
   },
   phones: ["+91 93032 62253", "+91 97132 32040"],
-  email: null as string | null,
+  email: "sahilwadhwani.sujanpublic@outlook.com",
   whatsapp: "919303262253" as string | null,
   principal: {
     name: "Sukhveer Singh Bhatia",

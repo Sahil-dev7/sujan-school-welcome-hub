@@ -45,6 +45,7 @@ export type Block =
       draft?: boolean;
     }
   | { type: "list"; heading: string; items: string[]; ordered?: boolean; note?: string }
+  | { type: "links"; heading: string; items: { label: string; url: string }[] }
   | { type: "steps"; heading: string; items: { title: string; text: string }[]; note?: string }
   | {
       type: "imageText";

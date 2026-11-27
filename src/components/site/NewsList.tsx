@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Reveal } from "./Reveal";
 
 export function NewsCard({ item, index = 0 }: { item: NewsItem; index?: number }) {
+  if (item.placeholder) return null;
   return (
     <Reveal
       as="article"
@@ -16,14 +17,13 @@ export function NewsCard({ item, index = 0 }: { item: NewsItem; index?: number }
     >
       <div className="flex items-center justify-between gap-3">
         <span className="rounded-full bg-secondary px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-accent">{item.category}</span>
-        <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+        {item.date && <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
           <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
-          {item.date ?? "Date to be announced"}
-        </span>
+          {item.date}
+        </span>}
       </div>
       <h3 className={cn("mt-5 text-xl font-semibold leading-snug", item.placeholder ? "text-placeholder-foreground" : "text-primary")}>{item.title}</h3>
       <p className={cn("mt-2 flex-1 text-sm leading-relaxed", item.placeholder ? "text-placeholder-foreground/90" : "text-muted-foreground")}>{item.text}</p>
-      {item.placeholder && <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-placeholder-foreground">To be added by the school</p>}
       {item.link &&
         (item.link.page ? (
           <Link

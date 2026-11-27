@@ -85,13 +85,9 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" aria-hidden="true" />
-              {SCHOOL.email ? (
-                <a href={`mailto:${SCHOOL.email}`} className="hover:text-gold">
+                <a href={`mailto:${SCHOOL.email}`} className="min-w-0 break-all hover:text-gold">
                   {SCHOOL.email}
                 </a>
-              ) : (
-                <span className="italic text-ink-foreground/50">Email address to be added</span>
-              )}
             </li>
           </ul>
         </div>

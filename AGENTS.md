@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep AP guidance in the content-driven Academics page registry with official College Board links; this preserves shared navigation without asserting unverified local exam policies.
+- Omit unsupplied content blocks and photo panels instead of rendering empty visual containers; this keeps public pages usable without fabricating school facts.

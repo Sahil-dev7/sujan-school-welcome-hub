@@ -1,5 +1,6 @@
 import { SCHOOL } from "@/lib/site";
 import type { Section } from "./types";
+import { AP_PROGRAM_PAGE } from "./ap-program";
 
 const YEARS = new Date().getFullYear() - SCHOOL.established;
 
@@ -33,11 +34,6 @@ export const SECTIONS: Section[] = [
             ],
           },
           { type: "facts" },
-          {
-            type: "placeholder",
-            label: "School introduction",
-            hint: "Add a short paragraph in the school's own words — the founders' intent, the community it serves and what makes the school distinctive.",
-          },
         ],
       },
       {
@@ -60,8 +56,6 @@ export const SECTIONS: Section[] = [
             heading: "Milestones",
             items: [
               { year: String(SCHOOL.established), title: "The school is established", text: "Founded in Kantaphod as an English-medium, co-educational school." },
-              { year: "Year", title: "Milestone to be added", text: "For example: first board examination batch, a new building, or Higher Secondary classes starting.", placeholder: true },
-              { year: "Year", title: "Milestone to be added", text: "Add further milestones confirmed by the school management.", placeholder: true },
               { year: String(new Date().getFullYear()), title: "Today", text: `${YEARS} years of educating children in Kantaphod and nearby villages.` },
             ],
           },
@@ -110,11 +104,6 @@ export const SECTIONS: Section[] = [
               "Education is a partnership between school and family. We value parents as partners and keep them informed about their child's progress and wellbeing.",
             ],
           },
-          {
-            type: "placeholder",
-            label: "School philosophy",
-            hint: "Replace the draft above with the school's own statement of educational philosophy.",
-          },
         ],
       },
       {
@@ -138,11 +127,6 @@ export const SECTIONS: Section[] = [
             paragraphs: [
               `${SCHOOL.name} is a private, unaided school managed independently of government funding.`,
             ],
-          },
-          {
-            type: "placeholder",
-            label: "Management committee",
-            hint: "Add the name of the managing society or trust, and the names and roles of the Chairperson, Director, Secretary and other members — with photographs if available.",
           },
         ],
       },
@@ -179,6 +163,7 @@ export const SECTIONS: Section[] = [
     image: "prizeStage",
     overview: [{ type: "programmes" }],
     pages: [
+      AP_PROGRAM_PAGE,
       {
         slug: "overview",
         title: "Academic Overview",
@@ -207,11 +192,6 @@ export const SECTIONS: Section[] = [
         image: "building",
         blocks: [
           {
-            type: "placeholder",
-            label: "Pre-primary classes",
-            hint: "Confirm whether the school offers Nursery / LKG / UKG classes, the age criteria, and timings. Remove this page from the menu if not offered.",
-          },
-          {
             type: "imageText",
             missingPhoto: "Pre-primary classroom",
             eyebrow: "The early years",
@@ -238,11 +218,6 @@ export const SECTIONS: Section[] = [
               "The primary years focus on fluent reading and writing in English and Hindi, confident arithmetic, and curiosity about the world through environmental studies, art and activity.",
             ],
           },
-          {
-            type: "placeholder",
-            label: "Primary subjects and timings",
-            hint: "List the subjects taught in Classes I–V, school timings and class sizes if the school wishes to share them.",
-          },
         ],
       },
       {
@@ -260,11 +235,6 @@ export const SECTIONS: Section[] = [
             paragraphs: [
               "In the middle years students meet each subject in greater depth — science, mathematics, social science and languages — and develop habits of independent study.",
             ],
-          },
-          {
-            type: "placeholder",
-            label: "Middle school subjects",
-            hint: "List the subjects, languages and any computer or activity periods offered in Classes VI–VIII.",
           },
         ],
       },
@@ -284,11 +254,6 @@ export const SECTIONS: Section[] = [
               `Students in Classes IX and X prepare for the ${SCHOOL.board} High School examination. Higher Secondary (Classes XI and XII) leads to the Higher Secondary examination.`,
             ],
           },
-          {
-            type: "placeholder",
-            label: "Higher Secondary streams",
-            hint: "List the streams offered in Classes XI–XII (for example Science – Maths, Science – Biology, Commerce, Arts) and the subjects in each.",
-          },
         ],
       },
       {
@@ -306,11 +271,6 @@ export const SECTIONS: Section[] = [
               `The school follows the prescribed curriculum and textbooks of the ${SCHOOL.board}, with English as the medium of instruction.`,
               "Alongside core subjects, students take part in co-curricular activities such as sports, art, music and cultural programmes.",
             ],
-          },
-          {
-            type: "placeholder",
-            label: "Subjects by class",
-            hint: "Add a class-wise subject list and the assessment pattern (unit tests, half-yearly and annual examinations).",
           },
         ],
       },
@@ -347,11 +307,6 @@ export const SECTIONS: Section[] = [
             heading: "Academic calendar",
             paragraphs: ["The school's calendar of terms, examinations, holidays and events will be published here."],
           },
-          {
-            type: "placeholder",
-            label: "Academic calendar for the current session",
-            hint: "Add session start date, examination schedule, vacations and major events — or upload the calendar as a PDF.",
-          },
         ],
       },
     ],
@@ -360,7 +315,7 @@ export const SECTIONS: Section[] = [
     slug: "campus",
     title: "Campus & Facilities",
     tagline: "Spaces for learning, play and growth",
-    intro: "An overview of the school's campus and learning spaces. Photographs of individual facilities will be added as the school shares them.",
+    intro: "An overview of the school's campus and learning spaces.",
     image: "building",
     pages: [
       {
@@ -377,11 +332,6 @@ export const SECTIONS: Section[] = [
             heading: "On Indore Road, Kantaphod",
             paragraphs: [`The school campus is located at Ward No. 3, Indore Road, Kantaphod, District Dewas.`],
           },
-          {
-            type: "placeholder",
-            label: "Campus details",
-            hint: "Describe the campus: number of buildings and classrooms, playground, drinking water, toilets, and any other facilities the school wishes to highlight.",
-          },
         ],
       },
       {
@@ -391,11 +341,6 @@ export const SECTIONS: Section[] = [
         icon: "monitor",
         image: "entrance",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Smart classrooms",
-            hint: "Confirm whether the school has smart classrooms or projectors, how many, and for which classes. Remove this page if not applicable.",
-          },
         ],
       },
       {
@@ -411,11 +356,6 @@ export const SECTIONS: Section[] = [
             eyebrow: "Science",
             heading: "Learning science by doing",
             paragraphs: ["Practical work helps students understand scientific concepts and prepares senior students for board practical examinations."],
-          },
-          {
-            type: "placeholder",
-            label: "Laboratories",
-            hint: "List the laboratories available (Physics, Chemistry, Biology) and the classes that use them.",
           },
         ],
       },
@@ -433,11 +373,6 @@ export const SECTIONS: Section[] = [
             heading: "Computer education",
             paragraphs: ["Basic computer skills — typing, documents, internet safety and an introduction to programming — are increasingly essential for every student."],
           },
-          {
-            type: "placeholder",
-            label: "Computer lab details",
-            hint: "Add the number of computers, the classes that use the lab and the computer curriculum.",
-          },
         ],
       },
       {
@@ -453,11 +388,6 @@ export const SECTIONS: Section[] = [
             eyebrow: "Reading",
             heading: "Building a love of reading",
             paragraphs: ["Reading widely builds vocabulary, imagination and understanding across every subject."],
-          },
-          {
-            type: "placeholder",
-            label: "Library details",
-            hint: "Add the number of books, newspapers or magazines available, and library periods for students.",
           },
         ],
       },
@@ -475,11 +405,6 @@ export const SECTIONS: Section[] = [
             heading: "Room to run and play",
             paragraphs: ["Physical activity is part of a healthy school day, building fitness, teamwork and sportsmanship."],
           },
-          {
-            type: "placeholder",
-            label: "Sports facilities",
-            hint: "List the playground and sports facilities available (e.g. cricket, kabaddi, kho-kho, volleyball, athletics) and indoor games.",
-          },
         ],
       },
       {
@@ -489,11 +414,6 @@ export const SECTIONS: Section[] = [
         icon: "bus",
         image: "entrance",
         blocks: [
-          {
-            type: "placeholder",
-            label: "School transport",
-            hint: "Confirm whether the school provides bus or van transport, the routes and villages covered, and how parents can enquire. Remove this page if not offered.",
-          },
           { type: "cta", heading: "Ask about transport", text: "Call the school office to ask about travel arrangements for your child." },
         ],
       },
@@ -508,11 +428,6 @@ export const SECTIONS: Section[] = [
             type: "prose",
             heading: "A safe place to learn",
             paragraphs: ["Children learn best when they feel safe. The safety and wellbeing of every student is a shared responsibility of the school and its families."],
-          },
-          {
-            type: "placeholder",
-            label: "Safety measures",
-            hint: "Describe the school's safety arrangements — for example CCTV, boundary wall, gate staff, visitor policy, first aid and fire safety — only as actually in place.",
           },
         ],
       },
@@ -539,7 +454,6 @@ export const SECTIONS: Section[] = [
             heading: "Fitness, teamwork and fair play",
             paragraphs: ["Games teach children to work as a team, to win graciously and to lose with dignity — lessons that last a lifetime."],
           },
-          { type: "placeholder", label: "Sports offered", hint: "List the sports and games students play, and any annual sports day or inter-house events." },
         ],
       },
       {
@@ -556,7 +470,6 @@ export const SECTIONS: Section[] = [
             heading: "Celebrating music, dance and tradition",
             paragraphs: ["Festivals and cultural programmes give students a stage to perform and a chance to celebrate the rich traditions of Malwa and India."],
           },
-          { type: "placeholder", label: "Cultural programmes", hint: "List the festivals and national days celebrated at school, and cultural activities offered." },
         ],
       },
       {
@@ -573,7 +486,6 @@ export const SECTIONS: Section[] = [
             heading: "Room for imagination",
             paragraphs: ["Drawing, painting and craft help children express themselves, observe carefully and build fine motor skills."],
           },
-          { type: "placeholder", label: "Art activities", hint: "Describe art periods, exhibitions or craft activities at the school." },
         ],
       },
       {
@@ -583,11 +495,6 @@ export const SECTIONS: Section[] = [
         icon: "medal",
         image: "winners",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Competitions",
-            hint: "List the inter-school or in-school competitions students take part in — quiz, debate, essay, drawing, science exhibition, sports meets.",
-          },
         ],
       },
       {
@@ -597,11 +504,6 @@ export const SECTIONS: Section[] = [
         icon: "map",
         image: "entrance",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Educational trips",
-            hint: "Add details and photographs of recent educational excursions or picnics organised by the school.",
-          },
         ],
       },
       {
@@ -618,7 +520,6 @@ export const SECTIONS: Section[] = [
             heading: "A celebration of the year",
             paragraphs: ["The annual function brings students, parents and teachers together to celebrate a year of learning and talent."],
           },
-          { type: "placeholder", label: "Annual function", hint: "Add the date, chief guests, programme and photographs of the most recent annual function." },
         ],
       },
       {
@@ -628,11 +529,6 @@ export const SECTIONS: Section[] = [
         icon: "users",
         image: "family",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Clubs and houses",
-            hint: "List any student clubs (eco, science, literary) or house system at the school, with their activities.",
-          },
         ],
       },
     ],
@@ -660,11 +556,6 @@ export const SECTIONS: Section[] = [
               `${SCHOOL.name} is a co-educational, English-medium school following the ${SCHOOL.board}. Admission enquiries are welcome throughout the year.`,
               "The quickest way to begin is to send an online enquiry — the school office will contact you with details about seat availability, the admission form and the next steps.",
             ],
-          },
-          {
-            type: "placeholder",
-            label: "Admission dates",
-            hint: "Add the admission window for the upcoming session (start and last date) and seat availability by class.",
           },
           { type: "cta", heading: "Ready to begin?", text: "Send an admission enquiry and the school office will get back to you." },
         ],
@@ -700,11 +591,6 @@ export const SECTIONS: Section[] = [
             heading: "Eligibility",
             paragraphs: ["Admission to each class depends on the child's age and their previous schooling, in line with the rules of the Madhya Pradesh School Education Department."],
           },
-          {
-            type: "placeholder",
-            label: "Age criteria by class",
-            hint: "Add the minimum age for each entry class (for example Nursery, KG, Class I) as of the cut-off date, and requirements for admission to higher classes.",
-          },
         ],
       },
       {
@@ -735,11 +621,6 @@ export const SECTIONS: Section[] = [
         summary: "Fees for the current session.",
         icon: "wallet",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Fee structure",
-            hint: "Add the class-wise fee structure for the current session (admission fee, tuition fee, other charges and payment schedule), or note that fee details are shared by the office on request.",
-          },
           { type: "cta", heading: "Questions about fees?", text: "Call the school office or send an enquiry for fee details." },
         ],
       },
@@ -766,11 +647,6 @@ export const SECTIONS: Section[] = [
         icon: "graduation",
         image: "prizeStage",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Academic achievements",
-            hint: "Add verified board examination results, toppers' names and photographs, and other academic honours.",
-          },
         ],
       },
       {
@@ -780,11 +656,6 @@ export const SECTIONS: Section[] = [
         icon: "trophy",
         image: "drill",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Sports achievements",
-            hint: "Add verified results from block, district, state or other tournaments, with student names and photographs.",
-          },
         ],
       },
       {
@@ -794,11 +665,6 @@ export const SECTIONS: Section[] = [
         icon: "medal",
         image: "award",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Student awards",
-            hint: "Add awards and recognition received by students in competitions, olympiads, arts or community service.",
-          },
         ],
       },
     ],
@@ -833,11 +699,6 @@ export const SECTIONS: Section[] = [
         icon: "star",
         image: "flag",
         blocks: [
-          {
-            type: "placeholder",
-            label: "Event albums",
-            hint: "Add photo albums from school events — Independence Day, Republic Day, annual function, sports day and festivals.",
-          },
           { type: "gallery", heading: "Photographs from school events" },
         ],
       },

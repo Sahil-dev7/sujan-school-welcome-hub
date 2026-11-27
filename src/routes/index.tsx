@@ -12,7 +12,7 @@ import { Icon } from "@/components/site/Icon";
 import { KeyFacts } from "@/components/site/KeyFacts";
 import { NewsCard } from "@/components/site/NewsList";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
-import { PhotoNote, PhotoPending } from "@/components/site/Placeholder";
+import { PhotoNote } from "@/components/site/Placeholder";
 import { PrincipalMessage } from "@/components/site/PrincipalMessage";
 import { Programmes } from "@/components/site/Programmes";
 import { Reveal } from "@/components/site/Reveal";
@@ -211,9 +211,9 @@ function Home() {
               </Link>
             </Button>
           </div>
-          <div className="mt-12 grid auto-rows-[220px] gap-4 md:grid-cols-4 md:auto-rows-[240px]">
-            {FACILITIES.map((f, i) => (
-              <Reveal key={f.title} delay={i * 70} className={i === 0 ? "md:col-span-2 md:row-span-2" : i === 4 ? "md:col-span-2" : ""}>
+          <div className="mt-12 grid auto-rows-[220px] gap-4 md:grid-cols-2 md:auto-rows-[240px]">
+            {FACILITIES.filter((f) => f.photo).map((f, i) => (
+              <Reveal key={f.title} delay={i * 70} className={i === 0 ? "md:row-span-2" : "md:row-span-2"}>
                 <Link
                   to="/$section/$page"
                   params={{ section: "campus", page: f.page }}
@@ -221,9 +221,7 @@ function Home() {
                 >
                   {f.photo ? (
                     <img src={PHOTOS[f.photo].src} alt={PHOTOS[f.photo].alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" style={{ objectPosition: PHOTOS[f.photo].position }} />
-                  ) : (
-                    <PhotoPending label={f.title} showLabel={false} className="rounded-2xl pb-14" />
-                  )}
+                  ) : null}
                   <span className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" aria-hidden="true" />
                   <span className="absolute bottom-0 left-0 flex w-full items-end justify-between p-5 text-ink-foreground">
                     <span className="font-display text-xl font-semibold md:text-2xl">{f.title}</span>
@@ -246,16 +244,14 @@ function Home() {
             title="Where talents find their stage"
             intro="Sports, dance, art, competitions and celebrations help every child discover what they love."
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {BEYOND.map((b, i) => (
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {BEYOND.filter((b) => b.photo).map((b, i) => (
               <Reveal key={b.title} delay={i * 90}>
                 <Link to="/$section/$page" params={{ section: "student-life", page: b.page }} className="group block">
                   <div className="relative overflow-hidden rounded-t-[999px] rounded-b-2xl">
                     {b.photo ? (
                       <img src={PHOTOS[b.photo].src} alt={PHOTOS[b.photo].alt} loading="lazy" className="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: PHOTOS[b.photo].position }} />
-                    ) : (
-                      <PhotoPending label={b.title} className="aspect-[3/4] h-auto rounded-t-[999px] rounded-b-2xl pt-20" />
-                    )}
+                    ) : null}
                   </div>
                   <div className="mt-5 flex items-center gap-3">
                     <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
@@ -302,11 +298,11 @@ function Home() {
               </Link>
             </Button>
           </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {NEWS.news.slice(0, 2).map((n, i) => (
               <NewsCard key={n.title} item={n} index={i} />
             ))}
-            <Reveal delay={160} className="rounded-2xl bg-primary p-6 text-primary-foreground shadow-soft">
+            {NEWS.events.length > 0 && <Reveal delay={160} className="rounded-2xl bg-primary p-6 text-primary-foreground shadow-soft">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">Upcoming events</p>
               <ul className="mt-4 divide-y divide-primary-foreground/15">
                 {NEWS.events.map((e) => (
@@ -325,7 +321,7 @@ function Home() {
               <Link to="/$section/$page" params={{ section: "news", page: "upcoming-events" }} className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-gold hover:underline">
                 View calendar <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-            </Reveal>
+            </Reveal>}
           </div>
         </div>
       </section>

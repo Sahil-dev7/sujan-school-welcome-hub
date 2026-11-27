@@ -23,36 +23,8 @@ export const NEWS: Record<"news" | "events" | "announcements", NewsItem[]> = {
       date: null,
       link: { section: "admissions", page: "enquiry", label: "Send an enquiry" },
     },
-    {
-      category: "News",
-      title: "News item to be added",
-      text: "Share recent school news here — results, celebrations, visits or achievements.",
-      date: null,
-      placeholder: true,
-    },
   ],
   events: [
-    {
-      category: "Event",
-      title: "Annual Function",
-      text: "Date and programme to be announced by the school.",
-      date: null,
-      placeholder: true,
-    },
-    {
-      category: "Event",
-      title: "Annual Sports Day",
-      text: "Date and events to be announced by the school.",
-      date: null,
-      placeholder: true,
-    },
-    {
-      category: "Event",
-      title: "Parent–Teacher Meeting",
-      text: "Date to be announced by the school.",
-      date: null,
-      placeholder: true,
-    },
   ],
   announcements: [
     {
@@ -61,13 +33,6 @@ export const NEWS: Record<"news" | "events" | "announcements", NewsItem[]> = {
       text: "For any queries, call the school office on the numbers listed on our contact page.",
       date: null,
       link: { section: "contact", label: "Contact details" },
-    },
-    {
-      category: "Notice",
-      title: "Announcement to be added",
-      text: "Post notices for students and parents here — holidays, examination schedules and reminders.",
-      date: null,
-      placeholder: true,
     },
   ],
 };

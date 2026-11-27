@@ -23,7 +23,7 @@ function Success({ onReset, kind }: { onReset: () => void; kind: "admission" | "
   return (
     <div role="status" className="flex flex-col items-center rounded-2xl border bg-card px-6 py-12 text-center shadow-soft">
       <CheckCircle2 className="h-14 w-14 text-accent" aria-hidden="true" />
-      <h3 className="mt-5 text-2xl font-semibold text-primary">Thank you — your {kind === "admission" ? "enquiry" : "message"} has been sent</h3>
+      <h3 className="mt-5 text-2xl font-semibold text-primary">Thank you — your {kind === "admission" ? "enquiry" : "message"} has been received</h3>
       <p className="mt-3 max-w-md text-muted-foreground">
         The school office will contact you on the mobile number you provided. For anything urgent, please call{" "}
         <a href={telHref(SCHOOL.phones[0])} className="font-semibold text-foreground hover:text-accent">
